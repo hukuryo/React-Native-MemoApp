@@ -1,13 +1,11 @@
 import * as React from "react";
-import { SafeAreaView, StyleSheet, View } from "react-native";
+import { SafeAreaView, StyleSheet } from "react-native";
+import { tw } from "tailwind-rn";
 import { Button } from "react-native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
-const Stack = createNativeStackNavigator();
 
 export const HomeScreen = ({ navigation }) => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Button
         title="Go to Details"
         onPress={() =>
@@ -16,13 +14,15 @@ export const HomeScreen = ({ navigation }) => {
           })
         }
       />
-    </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
   },
   scrollView: {
     flex: 1,

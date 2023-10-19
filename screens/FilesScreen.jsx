@@ -1,11 +1,11 @@
 import React from "react";
-import { Button, Text, View } from "react-native";
+import { Button, SafeAreaView, Text } from "react-native";
 
-export const ClipScreen = () => {
+export const FilesScreen = () => {
   return (
-    <View>
+    <SafeAreaView>
       <Button title="Go to Home" onPress={() => navigation.navigate("Home")} />
       <Text>ClipPage</Text>
-    </View>
+    </SafeAreaView>
   );
 };
