@@ -4,9 +4,11 @@ import { HomeScreen } from "./screens/HomeScreen";
 import { DetailScreen } from "./screens/DetailScreen";
 import { NewMemoScreen } from "./screens/NewMemoScreen";
 import { createStackNavigator } from "@react-navigation/stack";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+
+const Tab = createMaterialTopTabNavigator();
 
 const Stack = createStackNavigator();
-const Tab = createBottomTabNavigator();
 
 const MemoStack = () => {
   return (
@@ -24,7 +26,12 @@ const MemoStack = () => {
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator
+        screenOptions={{
+          tabBarItemStyle: { width: 100 },
+          tabBarItemStyle: { marginTop: 100 },
+        }}
+      >
         <Tab.Screen
           name="HomeTab"
           component={MemoStack}
